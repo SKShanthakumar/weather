@@ -1,9 +1,11 @@
+//require('dotenv').config()
+
 const input = document.querySelector("#input")
 const apikey = "a363c9b03d3fc270a6ca2c0d799c492a";
 
 
 const func = async (city) => {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`);
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt={7}&appid=${apikey}`);
     const data = await response.json();
 
     return data;
