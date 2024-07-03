@@ -3,6 +3,11 @@
 const input = document.querySelector("#input")
 const apikey = "a363c9b03d3fc270a6ca2c0d799c492a";
 
+input.addEventListener('keyup', (e) => {
+    if(e.keyCode == 13){
+        search()
+    }
+} )
 
 const func = async (city) => {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`);
